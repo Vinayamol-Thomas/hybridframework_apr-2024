@@ -8,14 +8,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.alianz.base.AutomationWrapper;
-
-public class LoginUITest extends AutomationWrapper {
-	
+public class LoginUITest2 {
 	@Test(priority=1)
 	public void titleTest()
 	{
-		
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php");
 		String pageTitle= driver.getTitle();
 		System.out.println("Page title of launched application is : "+pageTitle);
 		Assert.assertEquals(pageTitle, "OrangeHRM", pageTitle);
