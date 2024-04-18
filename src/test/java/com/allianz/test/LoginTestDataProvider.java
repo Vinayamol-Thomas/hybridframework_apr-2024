@@ -18,6 +18,7 @@ public class LoginTestDataProvider extends AutomationWrapper {
 		driver.findElement(By.name("username")).sendKeys("Admin");
 		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		//driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
 		String actualHeader=driver.findElement(By.xpath("//h6[text()='Dashboard']")).getText();
 		Assert.assertEquals(actualHeader, "Dashboard");
 	}
