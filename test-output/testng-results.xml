@@ -2,24 +2,41 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-17T23:25:47 PDT" name="Default suite" finished-at="2024-04-17T23:26:19 PDT" duration-ms="31141">
+  <suite started-at="2024-04-29T04:44:36 PDT" name="Default suite" finished-at="2024-04-29T04:44:54 PDT" duration-ms="18328">
     <groups>
     </groups>
-    <test started-at="2024-04-17T23:25:47 PDT" name="Default test" finished-at="2024-04-17T23:26:19 PDT" duration-ms="31141">
-      <class name="com.allianz.test.AddEmployeeTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.allianz.test.AddEmployeeTest@2d710f1a]" started-at="2024-04-17T23:25:48 PDT" name="setUp" finished-at="2024-04-17T23:26:10 PDT" duration-ms="22074" status="PASS">
+    <test started-at="2024-04-29T04:44:36 PDT" name="Default test" finished-at="2024-04-29T04:44:54 PDT" duration-ms="18328">
+      <class name="com.allianz.test.LoginTestDataProvider">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.allianz.test.LoginTestDataProvider@1ed6388a]" started-at="2024-04-29T04:44:39 PDT" name="setUp" finished-at="2024-04-29T04:44:51 PDT" duration-ms="11960" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="invalidDisplayPictureTest()[pri:0, instance:com.allianz.test.AddEmployeeTest@2d710f1a]" started-at="2024-04-17T23:26:10 PDT" name="invalidDisplayPictureTest" finished-at="2024-04-17T23:26:18 PDT" duration-ms="8518" status="PASS">
+        <test-method signature="ValidLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.allianz.test.LoginTestDataProvider@1ed6388a]" started-at="2024-04-29T04:44:51 PDT" name="ValidLoginTest" data-provider="commonDataProvider" finished-at="2024-04-29T04:44:54 PDT" duration-ms="3391" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Dashboard]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- invalidDisplayPictureTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.allianz.test.AddEmployeeTest@2d710f1a]" started-at="2024-04-17T23:26:18 PDT" name="tearDown" finished-at="2024-04-17T23:26:19 PDT" duration-ms="386" status="PASS">
+        </test-method> <!-- ValidLoginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.allianz.test.LoginTestDataProvider@1ed6388a]" started-at="2024-04-29T04:44:54 PDT" name="tearDown" finished-at="2024-04-29T04:44:54 PDT" duration-ms="313" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.allianz.test.AddEmployeeTest -->
+      </class> <!-- com.allianz.test.LoginTestDataProvider -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -11,19 +11,19 @@ import com.allianz.utils.DataUtils;
 
 public class LoginTestDataProvider extends AutomationWrapper {
 	
-	@Test
-	public void validLoginTest()
+	@Test(dataProvider="commonDataProvider" ,dataProviderClass=DataUtils.class)
+	public void ValidLoginTest(String username, String password, String expectedHeader)
 	{
 		
-		driver.findElement(By.name("username")).sendKeys("Admin");
-		driver.findElement(By.name("password")).sendKeys("admin123");
+		driver.findElement(By.name("username")).sendKeys(username);
+		driver.findElement(By.name("password")).sendKeys(password);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		//driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
 		String actualHeader=driver.findElement(By.xpath("//h6[text()='Dashboard']")).getText();
-		Assert.assertEquals(actualHeader, "Dashboard");
+		Assert.assertEquals(actualHeader, expectedHeader);
 	}
 	
-	@Test(dataProvider="invalidLoginData" ,dataProviderClass=DataUtils.class)
+	@Test(dataProvider="commonDataProvider" ,dataProviderClass=DataUtils.class)
 	public void invalidLoginTest(String username, String password, String expected)
 	{
 		
