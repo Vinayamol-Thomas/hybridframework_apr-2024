@@ -3,32 +3,29 @@ package com.allianz.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.alianz.base.WebDriverKeywords;
-
-public class LoginPage extends WebDriverKeywords {
+public class LoginPage2 {
 	private By usernameLocator=By.name("username");
 	private By passwordLocator=By.name("password");
 	private By loginLocator=By.xpath("//button[@type='submit']");
 	private By errorLocator= By.xpath("//p[text()='Invalid credentials']");
 	private  WebDriver driver;
 	
-	public LoginPage(WebDriver driver)
+	public LoginPage2(WebDriver driver)
 	{
-		super(driver);
 		this.driver=driver;
 	}
 	
 public  void enterUsername(String username)
 	{
-	super.setInputText(usernameLocator, username);
+	driver.findElement(usernameLocator).sendKeys(username);
 	}
 public  void enterPassword(String password)
 {
-	setInputText(passwordLocator, password);
+	driver.findElement(passwordLocator).sendKeys(password);
 }
 public  void clickOnLogin()
 {
-	clickElement(loginLocator);
+	driver.findElement(loginLocator).click();
 }
 public String getInvalidErrorMessage()
 {

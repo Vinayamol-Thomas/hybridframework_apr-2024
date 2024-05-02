@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.alianz.base.AutomationWrapper;
+import com.allianz.pages.DashboardPage;
 import com.allianz.pages.LoginPage;
 import com.allianz.utils.DataUtils;
 
@@ -15,12 +16,12 @@ public class LoginTestDataProvider extends AutomationWrapper {
 	@Test(dataProvider="commonDataProvider" ,dataProviderClass=DataUtils.class)
 	public void ValidLoginTest(String username, String password, String expectedHeader)
 	{
-		
-		LoginPage.enterUsername(driver, username);
-		LoginPage.enterPassword(driver, password);
-		LoginPage.clickOnLogin(driver);
-		
-		String actualHeader=driver.findElement(By.xpath("//h6[text()='Dashboard']")).getText();
+		LoginPage loginpage=new LoginPage(driver);
+		loginpage.enterUsername( username);
+		loginpage.enterPassword( password);
+		loginpage.clickOnLogin();
+		DashboardPage dashboardPage= new DashboardPage(driver);
+		String actualHeader=dashboardPage.getDashboardHeader();
 		Assert.assertEquals(actualHeader, expectedHeader);
 	}
 	
@@ -28,10 +29,11 @@ public class LoginTestDataProvider extends AutomationWrapper {
 	public void invalidLoginTest(String username, String password, String expected)
 	{
 		
-		LoginPage.enterUsername(driver, username);
-		LoginPage.enterPassword(driver, password);
-		LoginPage.clickOnLogin(driver);
-		String actualerror=driver.findElement(By.xpath("//p[text()='Invalid credentials']")).getText();
+		LoginPage loginpage=new LoginPage(driver);
+		loginpage.enterUsername( username);
+		loginpage.enterPassword( password);
+		loginpage.clickOnLogin();
+		String actualerror=loginpage.getInvalidErrorMessage();
 		Assert.assertEquals(actualerror, expected);
 	}
 }
