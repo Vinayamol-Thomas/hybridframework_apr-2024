@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.alianz.base.WebDriverKeywords;
-
+// using WebDriver Keywords
 public class LoginPage extends WebDriverKeywords {
 	private By usernameLocator=By.name("username");
 	private By passwordLocator=By.name("password");
@@ -32,14 +32,14 @@ public  void clickOnLogin()
 }
 public String getInvalidErrorMessage()
 {
-return driver.findElement(errorLocator).getText();	
+return super.getText(errorLocator);
 }
 public String getUsernamePlaceholder()
 {
-	return driver.findElement(usernameLocator).getAttribute("placeholder");
+	return getAttributeValue(usernameLocator, "placeholder");
 	}
 public String getPasswordPlaceholder()
 {
-	return driver.findElement(passwordLocator).getAttribute("placeholder");
+	return getAttributeValue(passwordLocator, "placeholder");
 	}
 }

@@ -17,4 +17,16 @@ public void  clickElement(By locator)
 {
 	 driver.findElement(locator).click();
 }
+public String  getInvalidErroressage(By locator)
+{
+	return  driver.findElement(locator).getText();
+}
+public String  getText(By locator)
+{
+	return  driver.findElement(locator).getText();
+}
+public String  getAttributeValue(By locator,String attributeName)
+{
+	return  driver.findElement(locator).getAttribute(attributeName);
+}
 }
